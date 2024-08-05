@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="false">
+    <contextName>CHESS-API-SERVER</contextName>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%contextName] %date{ISO8601} %-5level [%X{aggregateId}] %logger{36} %X{sourceThread} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="JSON" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+
+    <root level="${LOGGING_LEVEL:-INFO}">
+        <appender-ref ref="${LOGGING_APPENDER:-STDOUT}" />
+    </root>
+</configuration>
