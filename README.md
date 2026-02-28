@@ -12,13 +12,3 @@ Your task is to create an application, that will enable the user to move chess p
 1. There should be a possibility to put a new piece (of a given type) on an empty chess field and assign a unique ID (you can choose how ID should look like) to it during this action.
 1. There should be a possibility to move a piece to a selected field given an id of the chess piece that is on the table.
 
-### Technical Requirements:
-1. Use this repository as a backbone to implement functionality under the '/application' directory.
-1. To implement REST API, please use ZIO and Tapir (application should also host swagger)
-1. You are free to choose how to persist the data, but the application in case of the unexpected crash should not lose the state of the chess board or any previously created chess piece
-1. Each successful action should be emitted to Kafka "events" topic (adding piece, removing piece, moving piece)
-1. Feel free to extend Dependencies.scala but keep in mind that using Scala, tapir, ZIO and kafka is mandatory!
-
-For convenience and easier testing, you are provided with /client which should read and log all messages that were sent to
-the configured topic. Also, you can use file under /docker-compose to set up Kafka for testing the implementation. If you need feel free to extend compose file.
-
